@@ -7,13 +7,14 @@ import cors from 'cors'
 
 const app = express();
 app.use(express.json())
-app.use(
-    cors({
-        origin:"http://localhost:5555",
-        method:['GET','POST','PUT','DELETE'],
-        allowHeaders:['Content-Type'],
-    })
-);
+app.use(cors())
+// app.use(
+//     cors({
+//         origin:"http://localhost:5555",
+//         method:['GET','POST','PUT','DELETE'],
+//         allowHeaders:['Content-Type'],
+//     })
+// );
 app.get('/',(request,response)=>{
     console.log(request)
     return response.status(234).send('Testing')
